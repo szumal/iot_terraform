@@ -1,0 +1,16 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "LocalTemperatureProcessor",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "Mock processor for sensor data",
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Lifecycle": {
+        "Run": "docker run my-local-temp-processor"
+      }
+    }
+  ]
+}
