@@ -14,5 +14,9 @@ output "public_key" {
 }
 
 output "iot_thing_name" {
-  value = aws_iot_thing.gateway.name
+  value = aws_iot_thing.device.name
+}
+
+output "iot_endpoint" {
+  value = data.aws_iot_endpoint.iot.endpoint_address
 }

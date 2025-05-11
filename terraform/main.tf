@@ -2,6 +2,10 @@ provider "aws" {
   region = var.aws_region
 }
 
+data "aws_iot_endpoint" "iot" {
+  endpoint_type = "iot:Data-ATS"
+}
+
 resource "aws_iot_thing" "device" {
   name = "gg-demo-device"
 }
