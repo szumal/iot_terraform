@@ -2,16 +2,17 @@ import time
 import ssl
 import paho.mqtt.client as mqtt
 import json
+import os
 
 THING_NAME = "gg-demo-device"
-ENDPOINT = "<paste the output of terraform apply here>"
+ENDPOINT = os.getenv("IOT_ENDPOINT")
 PORT = 8883
 
 CA_PATH = "../terraform/AmazonRootCA1.pem"
 CERT_PATH = "../terraform/device.pem.crt"
 KEY_PATH = "../terraform/private.pem.key"
 
-def on_connect(client, rc):
+def on_connect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")
     while True:
         payload = {
